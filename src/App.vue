@@ -3,22 +3,18 @@
     <a-layout-sider style="height: 100vh" v-model:collapsed="collapsed" :trigger="null" collapsible>
       <div class="logo"/>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <a-menu-item key="1">
-          <user-outlined/>
-          <span>Salary</span>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <video-camera-outlined/>
-          <span>nav 2</span>
-        </a-menu-item>
-        <a-menu-item key="3">
-          <upload-outlined/>
-          <span>nav 3</span>
-        </a-menu-item>
-        <a-menu-item>
-
-          <router-link :to="{ name: 'Salary' }">Salary</router-link>
-        </a-menu-item>
+        <router-link :to="{ name: 'HomePage' }">
+          <a-menu-item key="1">
+            <user-outlined/>
+            <span>HomePage</span>
+          </a-menu-item>
+        </router-link>
+        <router-link :to="{ name: 'SalaryPage' }">
+          <a-menu-item key="2">
+            <video-camera-outlined/>
+            <span>Salary</span>
+          </a-menu-item>
+        </router-link>
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -39,20 +35,14 @@
   </a-layout>
 </template>
 <script>
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined
-} from '@ant-design/icons-vue';
+import {MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, VideoCameraOutlined} from '@ant-design/icons-vue';
 import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
   components: {
     UserOutlined,
     VideoCameraOutlined,
-    UploadOutlined,
+    // UploadOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
   },

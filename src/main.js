@@ -3,12 +3,12 @@ import App from './App.vue'
 import antd from 'ant-design-vue'
 import {createRouter, createWebHashHistory} from "vue-router"
 import 'ant-design-vue/dist/antd.css'
-import Salary from "@/pages/Salary";
+import SalaryPage from "@/views/SalaryPage/SalaryPage";
+import HomePage from "@/views/HomePage/HomePage";
 
-const Home = {template: '<div>Home</div>'}
 const routes = [
-    {path: '/', component: Home, exact: true},
-    {path: '/salary', name: 'Salary', component: Salary},
+    {path: '/', name: 'HomePage', component: HomePage, exact: true},
+    {path: '/salary', name: 'SalaryPage', component: SalaryPage},
 ]
 
 const router = createRouter({
